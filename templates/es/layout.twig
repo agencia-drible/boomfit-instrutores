@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title> BoomFit.eu </title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicons/favicon-16x16.png">
+  <link rel="manifest" href="/img/favicons/site.webmanifest">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <!-- CSS  -->
+  <link rel="stylesheet" type="text/css" href="/css/bundle.css">
+  <link rel="stylesheet" type="text/css" href="/css/hody-icons.css">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700|Source+Sans+Pro:300,400|Kaushan+Script|Lora|Playfair+Display:700">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" type="text/css" href="/css/custom.css">
+
+</head>
+<body>
+  <div class="fixed-cta"><a href="https://www.boomfit.eu">Visitar Website</a></div>
+<!-- NAVBAR -->
+<aside class="aside-right aside-hidden" id="aside-nav">
+      <div class="toggle-nav" tabindex="0" aria-label="Menu" role="button" aria-controls="navigation">
+            <div class="hamburger">
+                  <div class="hamburger-box">
+                        <div class="hamburger-inner"></div>
+                  </div>
+            </div>
+      </div>
+      <div class="logo">
+            <a href="/es">
+                  <img class="logo-dark" src="img/logoboom.png" alt="">
+            </a>
+      </div>
+      <div id="navigation">
+            <ul class="navigation-menu nav">
+                  <li><a href="#home" data-scroll="true">Inicio</a>
+                  </li>
+                  <li><a href="#introduction" data-scroll="true">Introducción</a>
+                  </li>
+                  <li><a href="#partners" data-scroll="true">Asociaciones</a>
+                  </li>
+                  <li><a href="#clients" data-scroll="true">Clientes</a>
+                  </li>
+                  <li><a href="#contacts" data-scroll="true">Contactos</a>
+                  </li>
+            </ul>
+      </div>
+        <!-- LINGUAGENS -->
+      {% import "_macros.html" as macros %}
+      <div class="text-center">
+      <div class="extra-cell">
+        <div class="dropdown">
+          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            <span>ES</span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li><a href="/pt">PT</a></li>
+            <li><a href="/en">EN</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+      <!-- FIM LINGUAGENS -->
+</aside>
+<!-- END NAVBAR -->
+{% block main %}{% endblock %}
+  <!-- FOOTER -->
+  <section class="footer">
+        <div class="container">
+              <ul class="social-list text-center">
+                    <li class="social-item-linkedin"><a target="_blank" href="#"><i class="hc-linkedin"></i></a>
+                    </li>
+                    <li class="social-item-facebook"><a target="_blank" href="https://www.facebook.com/boomfit.eu"><i class="hc-facebook"></i></a>
+                    </li>
+                    <li class="social-item-twitter"><a target="_blank" href="https://twitter.com/Boomfit_es"><i class="hc-twitter"></i></a>
+                    </li>
+                    <li class="social-item-pinterest"><a target="_blank" href="#"><i class="hc-pinterest"></i></a>
+                    </li>
+                    <li class="social-item-instagram"><a target="_blank" href="https://www.instagram.com/boomfit.eu/"><i class="hc-instagram"></i></a>
+                    </li>
+              </ul>
+        </div>
+        <div class="container">
+              <center><img class="footer" src="img/logofooter.png"></center>
+        </div>
+  </section>
+  <!-- JAVASCRIPT -->
+  <script src="/js/jquery.js"></script>
+  <script src="/js/bundle.js"></script>
+  <script src="/js/SmoothScroll.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNGOsBBZo9vf0Tw4w6aJiilSTFVfQ5GPI"></script>
+  <script src="/js/myscripts.js"></script>
+  <script src="/js/main.js"></script>
+
+</body>
+</html>
