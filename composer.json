@@ -2,7 +2,12 @@
   "require": {
     "craftcms/cms": "^3.0.0",
     "vlucas/phpdotenv": "^2.4.0",
-    "craftcms/contact-form": "2.2.3"
+    "rias/craft-contact-form-extensions": "1.0.13",
+    "craftcms/contact-form-honeypot": "1.0.2",
+    "dolphiq/craft3-forms": "1.1.0",
+    "lukeyouell/craft-contactformtemplates": "1.0.1",
+    "miranj/craft-contact-form-tuner": "1.0.0",
+    "xpertbot/craft-wheelform": "1.20.0"
   },
   "autoload": {
     "psr-4": {

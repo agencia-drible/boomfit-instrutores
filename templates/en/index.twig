@@ -1,5 +1,26 @@
 {% extends 'layout' %}
 {% block main %}
+
+<!-- WHEEL FORM -->
+{% macro errorList(errors) %}
+{% if errors %}
+<ul class="errors">
+  {% for error in errors %}
+  <li>{{ error }}</li>
+  {% endfor %}
+</ul>
+{% endif %}
+{% endmacro %}
+<!-- ========================================================= -->
+{# In the submitButton options:
+"type" can be button, or input
+"html" attribute takes precedence over the other properties,
+"attributes" is an easy way to add attributes to the button,
+All attributes are optional #}
+{% set form = wheelform.form({
+id: 6,
+}) %}
+
 <body>
 <section id="home">
       <div id="home-slider">
@@ -269,36 +290,60 @@ BoomFit is a brand of fitness equipment, with its own production that is committ
                               <hr>
                         </div>
                         <div class="section-content">
-                          <div class="form-group">
-                            <input type="text" name="name" class="form-control" placeholder="Name" required="required" id="name">
-                          </div>
-                          <div class="form-group">
-                            <input type="text"  name="email" class="form-control" placeholder="E-mail" id="email">
-                          </div>
-                          <div class="form-group">
-                            <input type="text" name="phone" class="form-control" placeholder="Phone Number"  id="phone-number">
-                          </div>
-                          <div class="form-group">
-                            <select name="location" class="form-control" required="required" id="city-id"><option value="">Location</option></select>
-                          </div>
-                          <div class="form-group">
-                            <div class="input text required"><input type="text" name="message" class="form-control" placeholder="Write here your message" required="required" id="custom-data"></div>
-                          </div>
-                          <p class="consent-copy">Your personal data will be processed by the entity World Fit Online Lda, for commercial purposes, up to 60 days after the validity of the promotion.</p>
-                          <p class="consent-copy">I agree to be contacted by the entity World Fit Online Lda, for sending your information, offers and promotions, for 24 months or 24 months after last contact, through:</p>
-                          <div class="input checkbox">
-                            <input type="hidden" name="consent_email" value="0">
-                            <label for="lead-opt-in-email">
-                            <input type="checkbox" name="consent_email" value="1" id="lead-opt-in-email">EMAIL</label>
-                          </div>
-                          <div class="input checkbox">
-                            <input type="hidden" name="consent_sms" value="0">
-                            <label for="lead-opt-in-sms"><input type="checkbox" name="consent_sms" value="1" id="lead-opt-in-sms">SMS</label>
-                          </div>
-                          <div class="form-group mt-25">
-                            <button type="submit" class="btn btn-color upper">Send Message!<i class="fa fa-angle-right"></i></button>
-                            </div>
-                              <!-- Thank you or Error Text on form submission -->
+                          <!-- FORMULARIO -->
+
+                          {% from _self import errorList %}
+
+                          {{ wheelformErrors['form'] is defined ? errorList(wheelformErrors['form']) }}
+
+                          <!-- MENSAGENS  -->
+                          {% if craft.app.session.hasFlash('wheelformSuccess') %}
+                          <p class="message success text-center bg-danger text-white">Thank you! We'll see your message soon!</p>
+                          {% elseif craft.app.session.hasFlash('wheelformError') %}
+                          <p class="message error text-center  bg-danger text-white">There was an error sending your message!</p>
+                          {% endif %}
+                          <!-- ========================================================= -->
+
+                          <form method="post" action="" accept-charset="UTF-8" novalidate="" enctype="multipart/form-data">
+                            {{ csrfInput() }}
+                            <input type="hidden" name="action" value="wheelform/message/send">
+                            <input type="hidden" name="form_id" value="6">
+                            <input type="hidden" name="redirect" value="{{ '/en/#contacts'|hash }}">
+
+                            <!-- NOME -->
+                            <input class="form-control" placeholder="Name" name="field_1" type="text" id="name" value="{{ values['field_1'] ?? '' }}">
+                            {{ wheelformErrors['field_1'] is defined ? errorList(wheelformErrors['field_1']) }}
+                            <br>
+                            <!-- TELEMOVEL -->
+                            <input class="form-control" placeholder="Phone Number" name="field_2" type="email" id="email" value="{{ values['field_2'] ?? '' }}">
+                            {{ wheelformErrors['field_2'] is defined ? errorList(wheelformErrors['field_2']) }}
+                            <br>
+                            <!-- EMAIL -->
+                            <input class="form-control" placeholder="Email" name="field_3" type="text" id="phone-number" value="{{ values['field_3'] ?? '' }}">
+                            {{ wheelformErrors['field_3'] is defined ? errorList(wheelformErrors['field_3']) }}
+                            <br>
+                            <!-- LOCALIDADE -->
+                            <input class="form-control" placeholder="Location" name="field_4" type="text" id="city-id" value="{{ values['field_4'] ?? '' }}">
+                            {{ wheelformErrors['field_4'] is defined ? errorList(wheelformErrors['field_4']) }}
+                            <br>
+                            <!-- MESNSAGEM -->
+                            <textarea class="form-control" placeholder="Write here your message" name="field_5" id="custom-data">{{ values['field_5'] ?? '' }}</textarea>
+                            {{ wheelformErrors['field_5'] is defined ? errorList(wheelformErrors['field_5']) }}
+
+                            <!-- INFORMACAO -->
+                            <br>
+                            <p class="consent-copy">Your data are duly referred to by World Fit Online Ltd., For commercial purposes, within 60 days of the validation of the promotion.</p>
+                            <p class="consent-copy">I agree to contact the company World Fit Online, to send your information, offers and promotions, for 24 months or 24 months after the last contact, through:</p>
+                            <!-- CHECKBOXS -->
+                             <label><input type="checkbox" name="field_6" value="EMAIL">EMAIL</label>
+                             <br>
+                             <label><input type="checkbox" name="field_6" value="SMS">SMS</label>
+                             <br>
+                             <br>
+                            <!-- ENVIAR  -->
+                            <input class="btn btn-color upper" type="submit" value="Send Message!">
+                          </form>
+                          <!-- ==================================================== -->
                               <div id="form-messages"></div>
                         </form>
                   </div>

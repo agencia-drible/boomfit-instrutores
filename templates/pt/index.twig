@@ -1,5 +1,26 @@
 {% extends 'layout' %}
 {% block main %}
+<!-- WHEEL FORM -->
+{% macro errorList(errors) %}
+{% if errors %}
+<ul class="errors">
+  {% for error in errors %}
+  <li>{{ error }}</li>
+  {% endfor %}
+</ul>
+{% endif %}
+{% endmacro %}
+<!-- ========================================================= -->
+
+{# In the submitButton options:
+"type" can be button, or input
+"html" attribute takes precedence over the other properties,
+"attributes" is an easy way to add attributes to the button,
+All attributes are optional #}
+{% set form = wheelform.form({
+id: 2,
+}) %}
+<!-- ========================================================== -->
 <body>
   <section id="home">
     <div id="home-slider">
@@ -268,92 +289,99 @@
             <hr>
           </div>
           <div class="section-content">
-            {% if message is defined %}
-            <ul>
-              {% for error in message.getAllErrors() %}
-              <li> {{ error }}
-                {% endfor %}
-              </uL>
-              {% endif %}
-              <form method="post" action="">
-                {{ getCsrfInput() }}
-                <input type="hidden" name="action" value="">
-                <input type="hidden" name="redirect" value="">
-                <div class="form-group">
-                  <input type="text" name="name" class="form-control" placeholder="Nome" required="required" id="name">
-                </div>
-                <div class="form-group">
-                  <input type="text"  name="email" class="form-control" placeholder="E-mail" id="fromEmail">
-                </div>
-                <div class="form-group">
-                  <input type="text" name="phone" class="form-control" placeholder="Telemóvel"  id="phone-number">
-                </div>
-                <div class="form-group">
-                  <select name="location" class="form-control" required="required" id="city-id"><option value="">Localidade</option>
-                    <option>Porto</option>
-                    <option>Braga</option>
-                    <option>Lisboa</option></select>
-                </div>
-                <div class="form-group">
-                  <div class="input text required"><input type="text" name="message" class="form-control" placeholder="Escreva aqui a sua mensagem" required="required" id="custom-data"></div>
-                </div>
-                <p class="consent-copy">Os seus dados pessoais serão tratados, pela entidade World Fit Online Lda, para efeitos comerciais, até 60 dias após a validade da promoção.</p>
-                <p class="consent-copy">Concordo ser contactado pela entidade World Fit Online Lda, para envio das suas informações, ofertas e promoções, durante 24 meses ou 24 meses após último contacto, através de:</p>
-                <div class="input checkbox">
-                  <input type="hidden" name="consent_email" value="0">
-                  <label for="lead-opt-in-email">
-                    <input type="checkbox" name="consent_email" value="1" id="lead-opt-in-email">EMAIL</label>
-                  </div>
-                  <div class="input checkbox">
-                    <input type="hidden" name="consent_sms" value="0">
-                    <label for="lead-opt-in-sms"><input type="checkbox" name="consent_sms" value="1" id="lead-opt-in-sms">SMS</label>
-                  </div>
-                  <div class="form-group mt-25">
-                    <button type="submit" class="btn btn-color upper">Enviar Mensagem!<i class="fa fa-angle-right"></i></button>
-                  </div>
-                </form>
-                <!-- Thank you or Error Text on form submission -->
-                <div id="form-messages"></div>
-              </form>
-            </div>
+            <!-- FORMULARIO -->
+
+            {% from _self import errorList %}
+
+            {{ wheelformErrors['form'] is defined ? errorList(wheelformErrors['form']) }}
+
+            <!-- MENSAGENS  -->
+            {% if craft.app.session.hasFlash('wheelformSuccess') %}
+            <p class="message success text-center bg-danger text-white">Obrigado! Analisaremos a sua mensagem em breve!</p>
+            {% elseif craft.app.session.hasFlash('wheelformError') %}
+            <p class="message error text-center  bg-danger text-white">Ocorreu um erro ao enviar a sua mensagem!</p>
+            {% endif %}
+            <!-- ========================================================= -->
+
+            <form method="post" action="" accept-charset="UTF-8" novalidate="" enctype="multipart/form-data">
+              {{ csrfInput() }}
+              <input type="hidden" name="action" value="wheelform/message/send">
+              <input type="hidden" name="form_id" value="2">
+              <input type="hidden" name="redirect" value="{{ '/pt/#contacts'|hash }}">
+
+              <!-- NOME -->
+              <input class="form-control" placeholder="Nome" name="field_1" type="text" id="name" value="{{ values['field_1'] ?? '' }}">
+              {{ wheelformErrors['field_1'] is defined ? errorList(wheelformErrors['field_1']) }}
+              <br>
+              <!-- TELEMOVEL -->
+              <input class="form-control" placeholder="Telemóvel" name="field_3" type="email" id="email" value="{{ values['field_3'] ?? '' }}">
+              {{ wheelformErrors['field_3'] is defined ? errorList(wheelformErrors['field_3']) }}
+              <br>
+              <!-- EMAIL -->
+              <input class="form-control" placeholder="Email" name="field_2" type="text" id="phone-number" value="{{ values['field_2'] ?? '' }}">
+              {{ wheelformErrors['field_2'] is defined ? errorList(wheelformErrors['field_2']) }}
+              <br>
+              <!-- LOCALIDADE -->
+              <input class="form-control" placeholder="Localidade" name="field_4" type="text" id="city-id" value="{{ values['field_4'] ?? '' }}">
+              {{ wheelformErrors['field_4'] is defined ? errorList(wheelformErrors['field_4']) }}
+              <br>
+              <!-- MESNSAGEM -->
+              <textarea class="form-control" placeholder="Escreva aqui a sua mensagem" name="field_5" id="custom-data">{{ values['field_5'] ?? '' }}</textarea>
+              {{ wheelformErrors['field_5'] is defined ? errorList(wheelformErrors['field_5']) }}
+
+              <!-- INFORMACAO -->
+              <br>
+              <p class="consent-copy">Os seus dados pessoais serão tratados, pela entidade World Fit Online Lda, para efeitos comerciais, até 60 dias após a validade da promoção.</p>
+              <p class="consent-copy">Concordo ser contactado pela entidade World Fit Online Lda, para envio das suas informações, ofertas e promoções, durante 24 meses ou 24 meses após último contacto, através de:</p>
+              <!-- CHECKBOXS -->
+               <label><input type="checkbox" name="field_6" value="EMAIL">EMAIL</label>
+               <br>
+               <label><input type="checkbox" name="field_6" value="SMS">SMS</label>
+               <br>
+               <br>
+              <!-- ENVIAR  -->
+              <input class="btn btn-color upper" type="submit" value="Enviar Mensagem!">
+            </form>
+            <!-- ==================================================== -->
           </div>
         </div>
-      </section>
-      <section class="p-0">
-        <div class="container-fluid">
-          <div class="row row-flex">
-            <div class="col-sm-4">
-              <div class="column-inner with-padding white-bg">
-                <div class="icon-box align-center"><i class="hc-pin"></i>
-                  <div class="ib-content">
-                    <h3>Morada</h3>
-                    <p>Rua do Progresso nº29 <br>4780-841 Vilarinho das Cambas,<br> Vila Nova de Famalicão</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="column-inner with-padding grey-bg">
-                <div class="icon-box align-center"><i class="hc-mail-open"></i>
-                  <div class="ib-content">
-                    <h3>E-mail</h3>
-                    <p>info@boomfit.eu</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="column-inner with-padding dark-bg">
-                <div class="icon-box align-center"><i class="hc-phone-portrait"></i>
-                  <div class="ib-content">
-                    <h3>Contactos</h3>
-                    <p>+351 918 601 806</p>
-                  </div>
+      </div>
+    </section>
+    <section class="p-0">
+      <div class="container-fluid">
+        <div class="row row-flex">
+          <div class="col-sm-4">
+            <div class="column-inner with-padding white-bg">
+              <div class="icon-box align-center"><i class="hc-pin"></i>
+                <div class="ib-content">
+                  <h3>Morada</h3>
+                  <p>Rua do Progresso nº29 <br>4780-841 Vilarinho das Cambas,<br> Vila Nova de Famalicão</p>
                 </div>
               </div>
             </div>
           </div>
+          <div class="col-sm-4">
+            <div class="column-inner with-padding grey-bg">
+              <div class="icon-box align-center"><i class="hc-mail-open"></i>
+                <div class="ib-content">
+                  <h3>E-mail</h3>
+                  <p>info@boomfit.eu</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="column-inner with-padding dark-bg">
+              <div class="icon-box align-center"><i class="hc-phone-portrait"></i>
+                <div class="ib-content">
+                  <h3>Contactos</h3>
+                  <p>+351 918 601 806</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </section>
-    </body>
+      </div>
+    </section>
+  </body>
   {% endblock %}
