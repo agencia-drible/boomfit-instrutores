@@ -266,7 +266,7 @@
         ) {
           if ($window.width() > 991) {
             if ($window.scrollTop() >= 150) {
-              $navBar.addClass('stick');
+              // $navBar.addClass('stick');
             } else {
               $navBar.removeClass('stick');
             }

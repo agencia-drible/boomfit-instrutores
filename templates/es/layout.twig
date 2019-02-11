@@ -23,19 +23,72 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
 <style>
-/* Tablets */
+
+
+#navitem:hover{
+  background-color:#de002f !important;
+  height: 70px;
+  color:#fff !important;
+}
+
+a#linguagem{
+  height:70px !important;
+  margin-bottom:10px !important;
+}
+
+#linguagem:hover{
+  background-color:#de002f !important;
+  color:#fff !important;
+}
+
+#submenus:hover{
+  background-color:#de002f !important;
+  color:#fff !important;
+}
+
+/* DROPDOWN DE LINGUAGENS  */
+
+
+
+/* MEDIA QUERIES */
 
 /* Most of the Smartphones Mobiles */
 
 @media (min-width: 320px) and (max-width: 480px) {
 
 #h1-home{font-size:4rem;}
+
+#cartoes{
+  margin-top:-60px;
+  margin-left:5px;
+  padding-bottom:30px;
 }
+
+#navlogo{
+  margin-top:5px;
+}
+
+}
+
+/* TABLET */
+@media (min-width: 768px) and (max-width: 769px) {
+
+#cartoes{
+margin-top:-40px;
+margin-left:8.5%;
+}
+
+#navlogo{
+  margin-top:5px;
+}
+
+}
+
 </style>
 
 </head>
 <body>
-  <div class="fixed-cta">
+  <div class="fixed-cta" id="iconcesta">
    <a href="https://www.boomfit.eu">
      <div>
        <span class="text hidden-sm hidden-xs">Volver a la tienda</span>
@@ -43,63 +96,64 @@
      </div>
    </a>
  </div>
- <!-- NAVBAR -->
- <div id="wrapper">
- <nav id="navbar">
-   <div class="navbar-wrapper">
-     <div class="container-fluid">
-       <!-- <div class="logo">
-         <a href="/">
-           <img class="logo-light" src="img/logoboomlgt.png" alt="">
-           <img class="logo-dark" src="img/logoboom.png" alt="">
-         </a>
-       </div> -->
-       <div class="menu-extras">
-         <div class="menu-item">
-           <div class="nav-toggle">
-             <a class="menu-toggle" href="#">
-               <div class="hamburger">
-                 <div class="hamburger-box">
-                   <div class="hamburger-inner"></div>
-                 </div>
-               </div>
-             </a>
-           </div>
-         </div>
-       </div>
-       <div id="navigation">
-         <ul class="navigation-menu nav float-right">
-           <li class="">
-             <a href="#home" data-scroll="true">Início</a>
-           </li>
-           <li class="">
-             <a href="#introduction" data-scroll="true">Introducción</a>
-           </li>
-           <li class="">
-             <a href="#partners" data-scroll="true">Asociaciones</a>
-           </li>
-           <li class="">
-             <a href="#contacts" data-scroll="true">Contacto</a>
-           </li>
-           {% import "_macros.html" as macros %}
-           <li class="menu-item-has-children">
-             <a href="/pt" data-scroll="true">ES<span class="icon hidden-lg hidden-md"><i class="fas fa-angle-down" id="iconsubmenu"></i></span></a>
-             <ul class="submenu">
-               <li>
-                 <a href="/pt">PT</a>
-               </li>
-               <li>
-                 <a href="/en">EN</a>
-               </li>
-             </ul>
-           </li>
-         </ul>
-       </div>
-     </div>
-   </div>
- </nav>
- </div>
- <!-- END NAVBAR -->
+
+    <!-- NAVBAR -->
+  <div id="wrapper">
+    <nav id="navbar">
+      <div class="navbar-wrapper">
+        <div class="container-fluid">
+           <div class="logo">
+            <a href="/">
+              <img class="" src="/img/logoboom.png" alt="" id="navlogo">
+            </a>
+          </div>
+          <div class="menu-extras">
+            <div class="menu-item">
+              <div class="nav-toggle">
+                <a class="menu-toggle" href="#">
+                  <div class="hamburger">
+                    <div class="hamburger-box">
+                      <div class="hamburger-inner"></div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div id="navigation">
+            <ul class="navigation-menu nav float-right">
+              <li>
+                <a href="#home" data-scroll="true" id="navitem">Inicio</a>
+              </li>
+              <li>
+                <a href="#introduction" data-scroll="true" id="navitem">Introducción</a>
+              </li>
+              <li>
+                <a href="#partners" data-scroll="true" id="navitem">Asociaciones</a>
+              </li>
+              <li>
+                <a href="#contacts" data-scroll="true" id="navitem">Contacto</a>
+              </li>
+              {% import "_macros.html" as macros %}
+              <li class="menu-item-has-children">
+                <a href="/es" data-scroll="true" id="linguagem">ES<span class="icon hidden-lg hidden-md"><i class="fas fa-angle-down" id="iconsubmenu"></i></span></a>
+                <ul class="submenu" id="drop">
+                  <li>
+                    <a href="/pt" id="submenus">PT</a>
+                  </li>
+                  <li>
+                    <a href="/en" id="submenus">EN</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <!-- END NAVBAR -->
+
 
     <!-- LINGUAGENS -->
     <!--{% import "_macros.html" as macros %}

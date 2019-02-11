@@ -51,7 +51,10 @@ body {
 
 ul > li> .submenu2{
   list-style-type: none !important;
+  margin-top:0
 }
+
+
 
 #iconsubmenu{
   margin-left:10px;
@@ -2507,8 +2510,10 @@ section.page-title .bp-desktop({
             top: 0;
             right: 0;
             left: 0;
-            height: 80px;
+            height: 60px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            background-color:#FFF;
+            color:#000;
             z-index: 99999;
             -webkit-transition: all .3s ease;
             transition: all .3s ease;
@@ -2573,6 +2578,7 @@ section.page-title .bp-desktop({
             padding: 0;
             font-size: 0;
             float: right;
+            margin-top:-10px;
       }
       @media only screen and (min-width: 992px) {
             #navbar .navigation-menu {
@@ -2589,12 +2595,12 @@ section.page-title .bp-desktop({
       }
       #navbar .navigation-menu > li > a {
             display: block;
-            color: #fff;
+            color: #000;
             font-size: 13px;
             font-family: 'Poppins', sans-serif;
             font-weight: 500;
-            -webkit-transition: all .3s ease;
-            transition: all .3s ease;
+            /* -webkit-transition: all .3s ease;
+            transition: all .3s ease; */
             line-height: 20px;
             padding-left: 15px;
             padding-right: 15px;

@@ -1,3 +1,13 @@
+
+#navlogo{
+  margin-top:-15px;
+}
+
+ul.submenu{
+background-color:#fff !important;
+margin-top:-10px;
+}
+
 section.portfolio{
       padding-bottom: 20px;
 }
@@ -155,16 +165,27 @@ section + section {
       position: fixed;
       right: 0px;
       top: 45vh;
-      background: #db1d38;
-      border: 2px solid #fff;
+      background: #de002f;
       padding: 8px 12px !important;
-      border-radius: 6px;
-      color: #ffffff;
+      color: #fff;
       font-size: 18px;
       font-weight: 900;
       text-decoration: none;
 }
 
+.fixed-cta:hover {
+background-color:#FFF;
+color: #de002f;
+border: 1px solid #de002f;
+
+}
+
 .fixed-cta a{
       color: #fff;
+      cursor:pointer;
+}
+
+.fixed-cta:hover a{
+      color: #de002f;
+      cursor:pointer;
 }

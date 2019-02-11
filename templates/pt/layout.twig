@@ -23,7 +23,34 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
 <style>
-/* Tablets */
+
+
+#navitem:hover{
+  background-color:#de002f !important;
+  height: 70px;
+  color:#fff !important;
+}
+
+a#linguagem{
+  height:70px !important;
+  margin-bottom:10px !important;
+}
+
+#linguagem:hover{
+  background-color:#de002f !important;
+  color:#fff !important;
+}
+
+#submenus:hover{
+  background-color:#de002f !important;
+  color:#fff !important;
+}
+
+/* DROPDOWN DE LINGUAGENS  */
+
+
+
+/* MEDIA QUERIES */
 
 /* Most of the Smartphones Mobiles */
 
@@ -31,20 +58,28 @@
 
 #h1-home{font-size:4rem;}
 
-#logoboom{
-  margin-top:-40px;
-  float:center;
+#cartoes{
+  margin-top:-60px;
+  margin-left:5px;
+  padding-bottom:30px;
+}
 
+#navlogo{
+  margin-top:5px;
 }
 
 }
 
-
+/* TABLET */
 @media (min-width: 768px) and (max-width: 769px) {
 
-#logoboom{
+#cartoes{
 margin-top:-40px;
 margin-left:8.5%;
+}
+
+#navlogo{
+  margin-top:5px;
 }
 
 }
@@ -61,45 +96,17 @@ margin-left:8.5%;
      </div>
    </a>
  </div>
-  <!-- NAVBAR -->
-  <!--<aside class="aside-right aside-hidden" id="aside-nav">
-    <div class="toggle-nav" tabindex="0" aria-label="Menu" role="button" aria-controls="navigation">
-      <div class="hamburger">
-        <div class="hamburger-box">
-          <div class="hamburger-inner"></div>
-        </div>
-      </div>
-    </div>
-    <div class="logo">
-      <a href="/">
-        <img class="logo-dark" src="img/logoboom.png" alt="">
-      </a>
-    </div>
-    <div id="navigation">
-      <ul class="navigation-menu nav">
-        <li><a href="#home" data-scroll="true">Início</a>
-        </li>
-        <li><a href="#introduction" data-scroll="true">Introdução</a>
-        </li>
-        <li><a href="#partners" data-scroll="true">Parcerias</a>
-        </li>
-        <li><a href="#clients" data-scroll="true">Clientes</a>
-        </li>
-        <li><a href="#contacts" data-scroll="true">Contactos</a>
-        </li>
-      </ul>
-    </div>-->
+
     <!-- NAVBAR -->
   <div id="wrapper">
     <nav id="navbar">
       <div class="navbar-wrapper">
         <div class="container-fluid">
-          <!-- <div class="logo">
+           <div class="logo">
             <a href="/">
-              <img class="logo-light" src="img/logoboomlgt.png" alt="">
-              <img class="logo-dark" src="img/logoboom.png" alt="">
+              <img class="" src="/img/logoboom.png" alt="" id="navlogo">
             </a>
-          </div> -->
+          </div>
           <div class="menu-extras">
             <div class="menu-item">
               <div class="nav-toggle">
@@ -115,27 +122,27 @@ margin-left:8.5%;
           </div>
           <div id="navigation">
             <ul class="navigation-menu nav float-right">
-              <li class="">
-                <a href="#home" data-scroll="true">Início</a>
+              <li>
+                <a href="#home" data-scroll="true" id="navitem">Início</a>
               </li>
-              <li class="">
-                <a href="#introduction" data-scroll="true">Introdução</a>
+              <li>
+                <a href="#introduction" data-scroll="true" id="navitem">Introdução</a>
               </li>
-              <li class="">
-                <a href="#partners" data-scroll="true">Parcerias</a>
+              <li>
+                <a href="#partners" data-scroll="true" id="navitem">Parcerias</a>
               </li>
-              <li class="">
-                <a href="#contacts" data-scroll="true">Contactos</a>
+              <li>
+                <a href="#contacts" data-scroll="true" id="navitem">Contactos</a>
               </li>
               {% import "_macros.html" as macros %}
               <li class="menu-item-has-children">
-                <a href="/pt" data-scroll="true">PT<span class="icon hidden-lg hidden-md"><i class="fas fa-angle-down" id="iconsubmenu"></i></span></a>
-                <ul class="submenu">
+                <a href="/pt" data-scroll="true" id="linguagem">PT<span class="icon hidden-lg hidden-md"><i class="fas fa-angle-down" id="iconsubmenu"></i></span></a>
+                <ul class="submenu" id="drop">
                   <li>
-                    <a href="/es">ES</a>
+                    <a href="/es" id="submenus">ES</a>
                   </li>
                   <li>
-                    <a href="/en">EN</a>
+                    <a href="/en" id="submenus">EN</a>
                   </li>
                 </ul>
               </li>
@@ -146,6 +153,8 @@ margin-left:8.5%;
     </nav>
   </div>
   <!-- END NAVBAR -->
+
+
     <!-- LINGUAGENS -->
     <!--{% import "_macros.html" as macros %}
     <div class="text-center">
