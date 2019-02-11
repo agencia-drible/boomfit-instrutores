@@ -11,6 +11,7 @@
 {% endif %}
 {% endmacro %}
 <!-- ========================================================= -->
+
 {# In the submitButton options:
 "type" can be button, or input
 "html" attribute takes precedence over the other properties,
@@ -19,6 +20,7 @@ All attributes are optional #}
 {% set form = wheelform.form({
 id: 4,
 }) %}
+<!-- ========================================================== -->
 <body>
   <section id="home">
     <div id="home-slider">
@@ -27,9 +29,9 @@ id: 4,
         <div class="slide-wrap">
           <div class="slide-content">
             <div class="container">
-              <h1 class="upper">Equipe su<br>estudio ou gimnásio!</h1>
-              <h4>Conozca nuestras comodidades de pago!</h4>
-              <p><a class="btn btn-light upper no-radius" href="#contacts" data-scroll="true">Sepa más!</a>
+              <h1 class="upper" id="h1home">¡Haga parte de<br>nuestra selección<br>premium de PTs!</h1>
+              <h4>Conviértete en uno de los nuestros!</h4>
+              <p><a class="btn btn-light upper no-radius" href="#contacts" data-scroll="true">Aprende más!</a>
               </p>
             </div>
           </div>
@@ -38,319 +40,237 @@ id: 4,
     </div>
   </section>
   <section id="introduction">
+    <!-- SECCAO ESQUERDA -->
     <div class="container">
       <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-          <div class="title text-center">
-            <h6 class="colored-text">Los precios más bajos de la Europa</h6>
-            <h1>BOOMFIT - Nº1 FITNESS STORE!</h1>
-            <hr>
-          </div>
-          <div class="section-content text-center">
-            <p class="fw-300 font-20">BoomFit es una marca de fitness, con producción propia que se compromete a satisfacer de la mejor forma las necesidades del mercado Fitness, trabajamos con los más variados espacios deportivos, como Clubes de Fútbol, Gimnasios, Escuelas, Estudios ... entre otros.
-              Dedicación, dinamismo y competencia son algunas de las características que hacen de esta tienda el nº1 de Fitness de Europa!</p>
-                <center><a class="btn btn-light-intro upper no-radius" href="#contacts" data-scroll="true">Contáctenos!</a></center>
-                <p>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="dark-bg p-0">
-      <div class="container-fluid">
-        <div class="row row-flex">
-          <div class="col-sm-4">
-            <div class="column-inner with-padding">
-              <div class="icon-box align-center" data-animation="fadeInUp"><i class="hc-watch-alt"></i>
-                <div class="ib-content">
-                  <h4 class="upper">¡Con facilidad de Pago!</h4>
-                  <p class="fw-300">¡BoomFit le ayuda a concretar sus planes! ¡Métodos de pago a pensar en usted! ¡Hecho a medida!</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-4">
-            <div class="column-inner with-padding" data-custom-bg="rgba(0, 0, 0, 0.2)">
-              <div class="icon-box align-center" data-animation="fadeInUp" data-delay="300"><i class="hc-money"></i>
-                <div class="ib-content">
-                  <h4 class="upper">¡Productos en 48H!</h4>
-                  <p class="fw-300">Un equipo que trabaja todos los días para que los equipos lleguen hasta usted a la mayor brevedad posible.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-4">
-            <div class="column-inner with-padding" data-custom-bg="rgba(0, 0, 0, 0.4)">
-              <div class="icon-box align-center" data-animation="fadeInUp" data-delay="600"><i class="hc-euro-alt"></i>
-                <div class="ib-content">
-                  <h4 class="upper">¡Precios más bajos de la Europa!</h4>
-                  <p class="fw-300">¡Garantizamos los precios más bajos aliados a productos de alta calidad!</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="partners" class="portfolio">
-      <div class="container">
-        <div class="title text-center">
-          <h1>Asociaciones</h1>
-          <hr>
-        </div>
-      </div>
-    </section>
-    <section class="white-bg p-0">
-      <div class="container-fluid">
-        <div class="row pt-10 pb-10 pl-10 pr-10">
-          <div class="enable-animation four-col with-spacing" id="works-grid">
-            <div class="work-item">
-              <div class="work-detail">
-                <a>
-                  <img src="img/1.png" alt="">
-                  <div class="work-info">
-                    <div class="centrize">
-                      <div class="v-center">
-                        <h3>Ruben Neves</h3>
-                        <p>Personal Trainer</p>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="work-item">
-              <div class="work-detail">
-                <a>
-                  <img src="img/2.png" alt="">
-                  <div class="work-info">
-                    <div class="centrize">
-                      <div class="v-center">
-                        <h3>Eduarda Silva</h3>
-                        <p>Personal Trainer</p>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="work-item">
-              <div class="work-detail">
-                <a>
-                  <img src="img/3.png" alt="">
-                  <div class="work-info">
-                    <div class="centrize">
-                      <div class="v-center">
-                        <h3>Fábio Costa</h3>
-                        <p>Personal Trainer</p>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="work-item">
-              <div class="work-detail">
-                <a>
-                  <img src="img/4.png" alt="">
-                  <div class="work-info">
-                    <div class="centrize">
-                      <div class="v-center">
-                        <h3>Ricardo Campos</h3>
-                        <p>Personal Trainer</p>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="work-item">
-              <div class="work-detail">
-                <a>
-                  <img src="img/5.png" alt="">
-                  <div class="work-info">
-                    <div class="centrize">
-                      <div class="v-center">
-                        <h3>Luís Fontes</h3>
-                        <p>Personal Trainer</p>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="work-item">
-              <div class="work-detail">
-                <a>
-                  <img src="img/6.png" alt="">
-                  <div class="work-info">
-                    <div class="centrize">
-                      <div class="v-center">
-                        <h3>Sofia Ramalho</h3>
-                        <p>Personal Trainer</p>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="work-item">
-              <div class="work-detail">
-                <a>
-                  <img src="img/7.png" alt="">
-                  <div class="work-info">
-                    <div class="centrize">
-                      <div class="v-center">
-                        <h3>Margarida Mègre</h3>
-                        <p>Personal Trainer</p>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="work-item">
-              <div class="work-detail">
-                <a>
-                  <img src="img/8.png" alt="">
-                  <div class="work-info">
-                    <div class="centrize">
-                      <div class="v-center">
-                        <h3>Duarte Antunes</h3>
-                        <p>Personal Trainer</p>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="clients">
-      <div class="container">
-        <div class="title text-center">
-          <h1>Clientes</h1>
-          <hr>
-        </div>
-        <div class="row pt-25 pb-25">
-          <div class="client-carousel carousel" data-slick="{&quot;slidesToShow&quot;: 6, &quot;dots&quot;: false}">
-            <div class="carousel-item">
-              <figure>
-                <img src="img/cliente1.png" alt="">
-              </figure>
-            </div>
-            <div class="carousel-item">
-              <figure>
-                <img src="img/cliente2.png" alt="">
-              </figure>
-            </div>
-            <div class="carousel-item">
-              <figure>
-                <img src="img/cliente3.png" alt="">
-              </figure>
-            </div>
-            <div class="carousel-item">
-              <figure>
-                <img src="img/cliente4.png" alt="">
-              </figure>
-            </div>
-            <div class="carousel-item">
-              <figure>
-                <img src="img/cliente5.png" alt="">
-              </figure>
-            </div>
-            <div class="carousel-item">
-              <figure>
-                <img src="img/cliente6.png" alt="">
-              </figure>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="contacts" id="contacts" class="split-section section-bordered">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-6 map-side map-right">
-            <div id="map" data-lat="41.3731315" data-long="-8.544687199999998"></div>
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="col-md-5 col-sm-12">
-          <div class="title text-center">
-            <h1>¡Haga su pedido!</h1>
-            <h4 class="upper">Vamos a trabajar juntos.</h4>
-            <hr>
-          </div>
-          <div class="section-content">
-            <!-- FORMULARIO -->
+        <div class="col-md-6 text-center">
 
-            {% from _self import errorList %}
-
-            {{ wheelformErrors['form'] is defined ? errorList(wheelformErrors['form']) }}
-
-            <!-- MENSAGENS  -->
-            {% if craft.app.session.hasFlash('wheelformSuccess') %}
-            <p class="message success text-center bg-danger text-white">Gracias! Analizamos su mensaje en breve!</p>
-            {% elseif craft.app.session.hasFlash('wheelformError') %}
-            <p class="message error text-center  bg-danger text-white">Se ha producido un error al enviar su mensaje!</p>
-            {% endif %}
-            <!-- ========================================================= -->
-
-            <form method="post" action="" accept-charset="UTF-8" novalidate="" enctype="multipart/form-data">
-              {{ csrfInput() }}
-              <input type="hidden" name="action" value="wheelform/message/send">
-              <input type="hidden" name="form_id" value="4">
-              <input type="hidden" name="redirect" value="{{ '/es/#contacts'|hash }}">
-
-              <!-- NOME -->
-              <input class="form-control" placeholder="Nombre" name="field_1" type="text" id="name" value="{{ values['field_1'] ?? '' }}">
-              {{ wheelformErrors['field_1'] is defined ? errorList(wheelformErrors['field_1']) }}
-              <br>
-              <!-- TELEMOVEL -->
-              <input class="form-control" placeholder="Móvil" name="field_2" type="email" id="email" value="{{ values['field_2'] ?? '' }}">
-              {{ wheelformErrors['field_2'] is defined ? errorList(wheelformErrors['field_2']) }}
-              <br>
-              <!-- EMAIL -->
-              <input class="form-control" placeholder="Email" name="field_3" type="text" id="phone-number" value="{{ values['field_3'] ?? '' }}">
-              {{ wheelformErrors['field_3'] is defined ? errorList(wheelformErrors['field_3']) }}
-              <br>
-              <!-- LOCALIDADE -->
-              <input class="form-control" placeholder="Lugar" name="field_4" type="text" id="city-id" value="{{ values['field_4'] ?? '' }}">
-              {{ wheelformErrors['field_4'] is defined ? errorList(wheelformErrors['field_4']) }}
-              <br>
-              <!-- MESNSAGEM -->
-              <textarea class="form-control" placeholder="Escriba aquí su mensage" name="field_5" id="custom-data">{{ values['field_5'] ?? '' }}</textarea>
-              {{ wheelformErrors['field_5'] is defined ? errorList(wheelformErrors['field_5']) }}
-
-              <!-- INFORMACAO -->
-              <br>
-              <p class="consent-copy">Sus datos personales serán tratados por la entidad World Fit Online Lda, a efectos comerciales, hasta 60 días después de la validez de la promoción.</p>
-              <p class="consent-copy">Estoy de acuerdo en contactar con la empresa World Fit Online, para enviar sus informaciones, ofertas y promociones, durante 24 meses o 24 meses después del último contacto, a través de:</p>
-              <!-- CHECKBOXS -->
-               <label><input type="checkbox" name="field_6" value="EMAIL">EMAIL</label>
-               <br>
-               <label><input type="checkbox" name="field_6" value="SMS">SMS</label>
-               <br>
-               <br>
-              <!-- ENVIAR  -->
-              <input class="btn btn-color upper" type="submit" value="Enviar Mensage!">
-            </form>
-            <!-- ==================================================== -->
-            <div id="form-messages"></div>
-          </form>
+        </div>
+        <!-- SECCAO DIREITA -->
+        <div class="col-md-6 text-left mt-2">
+          <h5 class="colored-text text-center">Nº1 Fitness Store</h5>
+          <h3 class="text-center">BOOMFIT OFICIAL PT - Ventajas exclusivas!</h3>
+          <br>
+          <div class="text-left">
+            <p><i class="fas fa-dumbbell"></i> &nbsp;&nbsp;Tarjeta personalizada con un 10% de descuento extra vitalicio</p>
+            <p><i class="fas fa-dumbbell"></i> &nbsp;&nbsp;Camiseta técnica oficial Boomfit PT</p>
+            <p><i class="fas fa-dumbbell"></i> &nbsp;&nbsp;Descuentos exclusivos en socios oficiales</p>
+            <p><i class="fas fa-dumbbell"></i> &nbsp;&nbsp;Acceso restringido a nuevos productos lanzados en nuestro sitio web</p>
+            <p><i class="fas fa-dumbbell"></i> &nbsp;&nbsp;Acceso especial a los eventos Boomfit</p>
+            <p><i class="fas fa-dumbbell"></i> &nbsp;&nbsp;Un regalo oficial de PT Boomfit</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
-  <section class="p-0">
+  <!-- ==================================================  -->
+  <section class="dark-bg p-0">
     <div class="container-fluid">
       <div class="row row-flex">
         <div class="col-sm-4">
+          <div class="column-inner with-padding">
+            <div class="icon-box align-center" data-animation="fadeInUp"><i class="fas fa-credit-card"></i>
+              <div class="ib-content">
+                <h4 class="upper">¡Con facilidad de Pago!</h4>
+                <p class="fw-300">¡BoomFit le ayuda a concretar sus planes! ¡Métodos de pago a pensar en usted! ¡Hecho a medida!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="column-inner with-padding" data-custom-bg="rgba(0, 0, 0, 0.2)">
+            <div class="icon-box align-center" data-animation="fadeInUp" data-delay="300"><i class="fas fa-truck"></i>
+              <div class="ib-content">
+                <h4 class="upper">¡Productos en 48H!</h4>
+                <p class="fw-300">Un equipo que trabaja todos los días para que los equipos lleguen hasta usted a la mayor brevedad posible.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="column-inner with-padding" data-custom-bg="rgba(0, 0, 0, 0.4)">
+            <div class="icon-box align-center" data-animation="fadeInUp" data-delay="600"><i class="fas fa-coins"></i>
+              <div class="ib-content">
+                <h4 class="upper">¡Precios más bajos de la Europa!</h4>
+                <p class="fw-300">¡Garantizamos los precios más bajos aliados a productos de alta calidad!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="partners" class="portfolio">
+    <div class="container">
+      <div class="title text-center">
+        <h1>Asociaciones</h1>
+        <hr>
+      </div>
+    </div>
+  </section>
+  <section class="white-bg p-0">
+    <div class="container-fluid">
+      <div class="row pt-10 pb-10">
+        <div class="enable-animation four-col" id="works-grid">
+          <!-- IMAGEM 1 -->
+          <div class="work-item">
+              <div class="work-detail">
+                <a>
+                  <img src="img/LUÍSARAPOSO.png" alt="">
+                  <div class="work-info">
+                    <div class="centrize">
+                      <div class="v-center">
+                        <h3> Luísa Raposo</h3>
+                        <p>Personal Trainer</p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+          <!-- ====================================================== -->
+          <!-- IMAGEM 2 -->
+          <div class="work-item">
+                <div class="work-detail">
+                  <a>
+                    <img src="img/luisribeiro2.png" alt="">
+                    <div class="work-info">
+                      <div class="centrize">
+                        <div class="v-center">
+                          <h3>Luís Ribeiro</h3>
+                          <p>Personal Trainer</p>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+          <!-- =========================================================== -->
+          <!-- IMAGEM 3 -->
+          <div class="work-item">
+              <div class="work-detail">
+                <a>
+                  <img src="img/nunosilva2.jpg" alt="">
+                  <div class="work-info">
+                    <div class="centrize">
+                      <div class="v-center">
+                        <h3>Nuno Silva</h3>
+                        <p>Personal Trainer</p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+          <!-- ============================================================== -->
+          <!-- IMAGEM 4 -->
+          <div class="work-item">
+              <div class="work-detail">
+                <a>
+                  <img src="img/ineslopes2.png" alt="">
+                  <div class="work-info">
+                    <div class="centrize">
+                      <div class="v-center">
+                        <h3>Inês Lopes</h3>
+                        <p>Personal Trainer</p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+          <!-- ==============================================================  -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCAO CONTACTOS -->
+  <section class="contacts" id="contacts" class="split-section section-bordered">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6 map-side map-right">
+          <div id="map" data-lat="41.3731315" data-long="-8.544687199999998"></div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="col-md-5 col-sm-12">
+        <div class="title text-center">
+          <h1 id="h1home">Mas informaciones!</h1>
+          <h4 class="upper">Vamos a trabajar juntos.</h4>
+          <hr>
+        </div>
+        <div class="section-content">
+          <!-- FORMULARIO -->
+
+          {% from _self import errorList %}
+
+          {{ wheelformErrors['form'] is defined ? errorList(wheelformErrors['form']) }}
+
+          <!-- MENSAGENS  -->
+          {% if craft.app.session.hasFlash('wheelformSuccess') %}
+          <p class="message success text-center bg-danger text-white">Gracias! Analizamos su mensaje en breve!!</p>
+          {% elseif craft.app.session.hasFlash('wheelformError') %}
+          <p class="message error text-center  bg-danger text-white">Se ha producido un error al enviar su mensaje!</p>
+          {% endif %}
+          <!-- ========================================================= -->
+
+          <form method="post" action="" accept-charset="UTF-8" novalidate="" enctype="multipart/form-data">
+            {{ csrfInput() }}
+            <input type="hidden" name="action" value="wheelform/message/send">
+            <input type="hidden" name="form_id" value="4">
+            <input type="hidden" name="redirect" value="{{ '/es/#contacts'|hash }}">
+
+            <!-- NOME -->
+            <input class="form-control" placeholder="Nombre" name="field_1" type="text" id="name" value="{{ values['field_1'] ?? '' }}">
+            {{ wheelformErrors['field_1'] is defined ? errorList(wheelformErrors['field_1']) }}
+            <br>
+            <!-- TELEMOVEL -->
+            <input class="form-control" placeholder="Móvil" name="field_2" type="email" id="email" value="{{ values['field_2'] ?? '' }}">
+            {{ wheelformErrors['field_2'] is defined ? errorList(wheelformErrors['field_2']) }}
+            <br>
+            <!-- EMAIL -->
+            <input class="form-control" placeholder="Email" name="field_3" type="text" id="phone-number" value="{{ values['field_3'] ?? '' }}">
+            {{ wheelformErrors['field_3'] is defined ? errorList(wheelformErrors['field_3']) }}
+            <br>
+            <!-- LOCALIDADE -->
+            <input class="form-control" placeholder="Lugar" name="field_4" type="text" id="city-id" value="{{ values['field_4'] ?? '' }}">
+            {{ wheelformErrors['field_4'] is defined ? errorList(wheelformErrors['field_4']) }}
+            <br>
+            <!-- MESNSAGEM -->
+            <textarea class="form-control" placeholder="Escriba aquí su mensage" name="field_5" id="custom-data">{{ values['field_5'] ?? '' }}</textarea>
+            {{ wheelformErrors['field_5'] is defined ? errorList(wheelformErrors['field_5']) }}
+
+            <!-- INFORMACAO -->
+            <br>
+            <p class="consent-copy">Sus datos personales serán tratados por la entidad World Fit Online Lda, a efectos comerciales, hasta 60 días después de la validez de la promoción.</p>
+            <p class="consent-copy">Estoy de acuerdo en contactar con la empresa World Fit Online, para enviar sus informaciones, ofertas y promociones, durante 24 meses o 24 meses después del último contacto, a través de:</p>
+            <!-- CHECKBOXS -->
+            <label><input type="checkbox" name="field_6" value="EMAIL">EMAIL</label>
+            <br>
+            <label><input type="checkbox" name="field_6" value="SMS">SMS</label>
+            <br>
+            <br>
+            <!-- ENVIAR  -->
+            <input class="btn btn-color upper" type="submit" value="Enviar Mensage!" id="btnmensagem">
+          </form>
+          <!-- ==================================================== -->
+          <div id="form-messages"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+  <!-- ===========================================================  -->
+  <section class="p-0">
+    <div class="container-fluid">
+      <div class="row row-flex">
+        <div class="col-4 col-sm-4">
           <div class="column-inner with-padding white-bg">
             <div class="icon-box align-center"><i class="hc-pin"></i>
               <div class="ib-content">
@@ -360,7 +280,7 @@ id: 4,
             </div>
           </div>
         </div>
-        <div class="col-sm-4">
+        <div class="col-4 col-sm-4">
           <div class="column-inner with-padding grey-bg">
             <div class="icon-box align-center"><i class="hc-mail-open"></i>
               <div class="ib-content">
@@ -370,7 +290,7 @@ id: 4,
             </div>
           </div>
         </div>
-        <div class="col-sm-4">
+        <div class="col-4 col-sm-4">
           <div class="column-inner with-padding dark-bg">
             <div class="icon-box align-center"><i class="hc-phone-portrait"></i>
               <div class="ib-content">

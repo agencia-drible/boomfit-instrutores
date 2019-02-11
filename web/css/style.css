@@ -44,21 +44,31 @@ body {
       -moz-osx-font-smoothing: grayscale;
       color: #787878;
       font-weight: 400;
-      font-size: 16px;
+      font-size: 16px
+      ;
       line-height: 1.5;
 }
+
+ul > li> .submenu2{
+  list-style-type: none !important;
+}
+
+#iconsubmenu{
+  margin-left:10px;
+}
+
+#h1home{
+  font-size:60px;
+}
+
+#logoboom{
+margin-top:40px;
+}
+
 body.boxed-layout {
       background-color: #f2f2f2;
 }
-@media only screen and (min-width: 992px) {
-      body.left-navbar #wrapper {
-            padding-left: 240px;
-            overflow-x: hidden;
-      }
-      body.left-navbar #footer {
-            left: 240px;
-      }
-}
+
 ::-moz-selection {
       background-color: #1f1f1f;
       color: #fff;
@@ -2535,6 +2545,7 @@ section.page-title .bp-desktop({
       }
       .submenu {
             margin-left: 0;
+            list-style-type: none;
       }
       .light-slide #navbar:not(.stick) {
             border-color: rgba(0, 0, 0, 0.1);
@@ -4618,9 +4629,7 @@ section.page-title .bp-desktop({
       #works-grid.four-col .work-item {
             width: 25%;
       }
-      #works-grid.with-spacing .work-item {
-            padding: 10px;
-      }
+
       @media only screen and (min-width: 768px) and (max-width: 991px) {
             #works-grid.two-col .work-item,
             #works-grid.three-col .work-item,
@@ -7829,4 +7838,27 @@ section.page-title .bp-desktop({
       .preview-icon:hover code,
       .preview-icon:hover i {
             color: #00c3da;
+      }
+
+      @media only screen and (max-width:768px) {
+      #map{
+        margin-top:150px;
+      }
+
+      #h1home{
+        font-size:3.2rem;
+      }
+
+
+
+      }
+
+      @media only screen and (min-width: 992px) {
+            body.left-navbar #wrapper {
+                  padding-left: 240px;
+                  overflow-x: hidden;
+            }
+            body.left-navbar #footer {
+                  left: 240px;
+            }
       }
