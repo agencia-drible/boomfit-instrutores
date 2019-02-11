@@ -3068,7 +3068,6 @@ section.page-title .bp-desktop({
             }
             #navbar .navigation-menu > li.menu-item-has-children > a:after,
             #aside-nav .navigation-menu > li.menu-item-has-children > a:after {
-                  content: "\e131";
                   font-family: "hody-icons";
                   position: absolute;
                   right: 20px;
@@ -3118,7 +3117,6 @@ section.page-title .bp-desktop({
             }
             #navbar .navigation-menu > li .submenu li.menu-item-has-children > a:not(.menu-label):after,
             #aside-nav .navigation-menu > li .submenu li.menu-item-has-children > a:not(.menu-label):after {
-                  content: "\e131";
                   font-family: "hody-icons";
                   position: absolute;
                   right: 30px;
@@ -3673,7 +3671,6 @@ section.page-title .bp-desktop({
             position: relative;
       }
       .fullscreen-menu .navigation-menu li.menu-item-has-children > a:after {
-            content: "\e131";
             font-family: "hody-icons";
             position: absolute;
             right: -10px;
@@ -6425,7 +6422,6 @@ section.page-title .bp-desktop({
             position: relative;
       }
       .form-select:after {
-            content: "\e131";
             font-family: 'hody-icons';
             position: absolute;
             top: 50%;
