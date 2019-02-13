@@ -25,7 +25,7 @@ id: 2,
   <section id="home">
     <div id="home-slider">
       <div class="slide-item">
-        <img src="img/banner3.jpg" alt="">
+        <img src="/img/banner3.jpg" alt="">
         <div class="slide-wrap">
           <div class="slide-content">
             <div class="container">
@@ -120,7 +120,7 @@ id: 2,
           <div class="work-item">
             <div class="work-detail">
               <a>
-                <img src="img/LUÍSARAPOSO.png" alt="">
+                <img src="/img/LUÍSARAPOSO.png" alt="">
                 <div class="work-info">
                   <div class="centrize">
                     <div class="v-center">
@@ -138,7 +138,7 @@ id: 2,
           <div class="work-item">
             <div class="work-detail">
               <a>
-                <img src="img/luisribeiro2.png" alt="">
+                <img src="/img/luisribeiro2.png" alt="">
                 <div class="work-info">
                   <div class="centrize">
                     <div class="v-center">
@@ -156,7 +156,7 @@ id: 2,
           <div class="work-item">
             <div class="work-detail">
               <a>
-                <img src="img/nunosilva2.jpg" alt="">
+                <img src="/img/nunosilva2.jpg" alt="">
                 <div class="work-info">
                   <div class="centrize">
                     <div class="v-center">
@@ -174,7 +174,7 @@ id: 2,
           <div class="work-item">
             <div class="work-detail">
               <a>
-                <img src="img/ineslopes2.png" alt="">
+                <img src="/img/ineslopes2.png" alt="">
                 <div class="work-info">
                   <div class="centrize">
                     <div class="v-center">
@@ -206,72 +206,72 @@ id: 2,
         </div>
       </div>
     </div>
-    <div class="container">
-      <div class="col-md-5 col-sm-12">
-        <div class="title text-center">
-          <h1 id="h1home">Solicite mais informações!</h1>
-          <h4 class="">Vamos trabalhar juntos.</h4>
-          <hr>
-        </div>
-        <div class="section-content">
-          <!-- FORMULARIO -->
+    <div class="container-fluid">
+        <div class="col-md-5 col-sm-12" id="formulario">
+          <div class="title text-center">
+            <h1 id="h1home">Solicite mais informações!</h1>
+            <h4 class="">Vamos trabalhar juntos.</h4>
+            <hr>
+          </div>
+          <div class="section-content">
+            <!-- FORMULARIO -->
 
-          {% from _self import errorList %}
+            {% from _self import errorList %}
 
-          {{ wheelformErrors['form'] is defined ? errorList(wheelformErrors['form']) }}
+            {{ wheelformErrors['form'] is defined ? errorList(wheelformErrors['form']) }}
 
-          <!-- MENSAGENS  -->
-          {% if craft.app.session.hasFlash('wheelformSuccess') %}
-          <p class="message success text-center bg-danger text-white">Obrigado! A sua mensagem será analisada em breve!</p>
-          {% elseif craft.app.session.hasFlash('wheelformError') %}
-          <p class="message error text-center  bg-danger text-white">Ocorreu um erro ao enviar a sua mensagem!</p>
-          {% endif %}
-          <!-- ========================================================= -->
+            <!-- MENSAGENS  -->
+            {% if craft.app.session.hasFlash('wheelformSuccess') %}
+            <p class="message success text-center bg-danger text-white">Obrigado! A sua mensagem será analisada em breve!</p>
+            {% elseif craft.app.session.hasFlash('wheelformError') %}
+            <p class="message error text-center  bg-danger text-white">Ocorreu um erro ao enviar a sua mensagem!</p>
+            {% endif %}
+            <!-- ========================================================= -->
 
-          <form method="post" action="" accept-charset="UTF-8" novalidate="" enctype="multipart/form-data">
-            {{ csrfInput() }}
-            <input type="hidden" name="action" value="wheelform/message/send">
-            <input type="hidden" name="form_id" value="2">
-            <input type="hidden" name="redirect" value="{{ '/pt/#contacts'|hash }}">
+            <form method="post" action="" accept-charset="UTF-8" novalidate="" enctype="multipart/form-data">
+              {{ csrfInput() }}
+              <input type="hidden" name="action" value="wheelform/message/send">
+              <input type="hidden" name="form_id" value="2">
+              <input type="hidden" name="redirect" value="{{ '/pt/#contacts'|hash }}">
 
-            <!-- NOME -->
-            <input class="form-control" placeholder="Nome" name="field_1" type="text" id="name" value="{{ values['field_1'] ?? '' }}">
-            {{ wheelformErrors['field_1'] is defined ? errorList(wheelformErrors['field_1']) }}
-            <br>
-            <!-- TELEMOVEL -->
-            <input class="form-control" placeholder="Telemóvel" name="field_3" type="email" id="email" value="{{ values['field_3'] ?? '' }}">
-            {{ wheelformErrors['field_3'] is defined ? errorList(wheelformErrors['field_3']) }}
-            <br>
-            <!-- EMAIL -->
-            <input class="form-control" placeholder="Email" name="field_2" type="text" id="phone-number" value="{{ values['field_2'] ?? '' }}">
-            {{ wheelformErrors['field_2'] is defined ? errorList(wheelformErrors['field_2']) }}
-            <br>
-            <!-- LOCALIDADE -->
-            <input class="form-control" placeholder="Localidade" name="field_4" type="text" id="city-id" value="{{ values['field_4'] ?? '' }}">
-            {{ wheelformErrors['field_4'] is defined ? errorList(wheelformErrors['field_4']) }}
-            <br>
-            <!-- MESNSAGEM -->
-            <textarea class="form-control" placeholder="Escreve aqui a sua mensagem" name="field_5" id="custom-data">{{ values['field_5'] ?? '' }}</textarea>
-            {{ wheelformErrors['field_5'] is defined ? errorList(wheelformErrors['field_5']) }}
+              <!-- NOME -->
+              <input class="form-control" placeholder="Nome" name="field_1" type="text" id="name" value="{{ values['field_1'] ?? '' }}">
+              {{ wheelformErrors['field_1'] is defined ? errorList(wheelformErrors['field_1']) }}
+              <br>
+              <!-- TELEMOVEL -->
+              <input class="form-control" placeholder="Telemóvel" name="field_3" type="email" id="email" value="{{ values['field_3'] ?? '' }}">
+              {{ wheelformErrors['field_3'] is defined ? errorList(wheelformErrors['field_3']) }}
+              <br>
+              <!-- EMAIL -->
+              <input class="form-control" placeholder="Email" name="field_2" type="text" id="phone-number" value="{{ values['field_2'] ?? '' }}">
+              {{ wheelformErrors['field_2'] is defined ? errorList(wheelformErrors['field_2']) }}
+              <br>
+              <!-- LOCALIDADE -->
+              <input class="form-control" placeholder="Localidade" name="field_4" type="text" id="city-id" value="{{ values['field_4'] ?? '' }}">
+              {{ wheelformErrors['field_4'] is defined ? errorList(wheelformErrors['field_4']) }}
+              <br>
+              <!-- MESNSAGEM -->
+              <textarea class="form-control" placeholder="Escreve aqui a sua mensagem" name="field_5" id="custom-data">{{ values['field_5'] ?? '' }}</textarea>
+              {{ wheelformErrors['field_5'] is defined ? errorList(wheelformErrors['field_5']) }}
 
-            <!-- INFORMACAO -->
-            <br>
-            <p class="consent-copy">Os seus dados pessoais serão tratados, pela entidade World Fit Online Lda, para efeitos comerciais, até 60 dias após a validade da promoção.</p>
-            <p class="consent-copy">Concordo ser contactado pela entidade World Fit Online Lda, para envio das suas informações, ofertas e promoções, durante 24 meses ou 24 meses após último contacto, através de:</p>
-            <!-- CHECKBOXS -->
-            <label><input type="checkbox" name="field_6" value="EMAIL">EMAIL</label>
-            <br>
-            <label><input type="checkbox" name="field_6" value="SMS">SMS</label>
-            <br>
-            <br>
-            <!-- ENVIAR  -->
-            <input class="btn btn-light-intro no-radius" type="submit" value="Enviar Mensagem!" id="btnmensagem">
+              <!-- INFORMACAO -->
+              <br>
+              <p class="consent-copy">Os seus dados pessoais serão tratados, pela entidade World Fit Online Lda, para efeitos comerciais, até 60 dias após a validade da promoção.</p>
+              <p class="consent-copy">Concordo ser contactado pela entidade World Fit Online Lda, para envio das suas informações, ofertas e promoções, durante 24 meses ou 24 meses após último contacto, através de:</p>
+              <!-- CHECKBOXS -->
+              <label><input type="checkbox" name="field_6" value="EMAIL">EMAIL</label>
+              <br>
+              <label><input type="checkbox" name="field_6" value="SMS">SMS</label>
+              <br>
+              <br>
+              <!-- ENVIAR  -->
+              <input class="btn btn-light-intro no-radius" type="submit" value="Enviar Mensagem!" id="btnmensagem">
+            </form>
+            <!-- ==================================================== -->
+            <div id="form-messages"></div>
           </form>
-          <!-- ==================================================== -->
-          <div id="form-messages"></div>
-        </form>
+        </div>
       </div>
-    </div>
   </div>
 </section>
 <!-- ===========================================================  -->
